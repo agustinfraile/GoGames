@@ -1,12 +1,13 @@
 import './App.css';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
+import Landing from './components/Landing/Landing';
 
 
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <h1>Henry Videogames</h1>
+        <Route path='/' component={Landing} />
       </div>
     </BrowserRouter>
   );

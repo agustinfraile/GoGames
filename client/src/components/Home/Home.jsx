@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import * as actions from '../../redux/actions/index';
+
 import "./home.css";
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from "react-router-dom";
+import { getGames } from '../../redux/actions';
 
 const Home = () => {
 
@@ -10,10 +11,10 @@ const Home = () => {
     const allGames = useSelector((state) => state.games);
 
     useEffect(() => {
-        dispatch(actions.getGames());
+        dispatch(getGames());
     }, []);
 
-    const handleClick = () => {
+    const handleClick = (e) => {
         e.preventDefault();
         dispatch(getGames());
     }
