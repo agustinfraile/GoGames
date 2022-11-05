@@ -3,6 +3,8 @@ import axios from 'axios';
 export const GET_GAMES = "GET_GAMES";
 export const GET_GAME = "GET_GAME";
 export const GET_GENRE = "GET_GENRE"; 
+export const GAMES_FILTERED_BY_GENRES = 'GAMES_FILTERED_BY_GENRES';
+export const NAME_BY_ORDER = "NAME_BY_ORDER";
 
 export const getGames = () => {
     return async function(dispatch) {
@@ -45,4 +47,19 @@ export const getGameGenre = () => {
         };
     };
 };
+
+export const gamesFiteredByGenres = (payload) => {
+    return {
+        type: GAMES_FILTERED_BY_GENRES,
+        payload
+    }
+}
+
+export const nameByOrder = (payload) => {
+    console.log(payload)
+    return {
+        type: NAME_BY_ORDER,
+        payload
+    }
+}
 

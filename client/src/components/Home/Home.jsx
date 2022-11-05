@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getGameGenre, getGames } from '../../redux/actions';
+import { getGameGenre, getGames, nameByOrder, gamesFiteredByGenres } from '../../redux/actions';
 import GameCard from '../GameCard/GameCard'
 import Paginate from '../Paginate/Paginate';
 import SelectGenres from '../SelectGenres/SelectGenres';
@@ -36,6 +36,16 @@ const Home = () => {
         dispatch(getGameGenre());
     }, [dispatch]);
 
+    const handleFilteredGenres = (e) => {
+        dispatch(gamesFiteredByGenres(e.target.value));
+    }
+
+    const handleOrderName = (e) => {
+        e.preventDefault();
+        dispatch(nameByOrder(e.target.value));
+
+    }
+
     return (
         <div>
             
@@ -45,22 +55,26 @@ const Home = () => {
                 paginate = {paginate} 
             />
 
-            <select>
-                <option selected disabled value="">Ordenar segun...</option>
+            <select onChange={e => handleOrderName(e)}>
+                {/* <option selected disabled value="">Ordenar alfabeticamente</option> */}
                 <option value="A-Z">A-Z</option>
                 <option value="Z-A">Z-A</option>
-                <option value="Mejor Rating">Mejor Rating</option>
-                <option value="Peor Rating">Peor Rating</option>
+            </select>
+
+            <select>
+                <option value="">Ordenar por ranking</option>
+                <option value="mejor">Mejor ranking</option>
+                <option value="peor">Peor ranking</option>
             </select>
 
             <select>
                 <option value="Todos">Todos los juegos</option>
                 <option value="Creados">Creados</option>
-                <option value="API">Juegos de la API</option>
+                <option value="API">Existentes</option>
             </select>
 
-            <select>
-                <option selected disabled value="">Generos</option>
+            <select onChange={e => handleFilteredGenres(e)}>
+                <option value="Todos">Todos los generos</option>
                 <SelectGenres allGenres = {allGenres} />
             </select>
 

@@ -22,7 +22,6 @@ const Paginate = ({gamesPage, allGames, paginate}) => {
                                     {num}
                                 </button>
                             </li>
-
                         )
                     })
                 }
