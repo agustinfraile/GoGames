@@ -7,13 +7,13 @@ export const GET_GENRE = "GET_GENRE";
 export const getGames = () => {
     return async function(dispatch) {
         try {
-            const { data } = await axios.get("http://localhost:3001/videogames"); 
+            const games = await axios.get("http://localhost:3001/videogames");
             return dispatch({
                 type: GET_GAMES,
-                payload: data
+                payload: games.data
             });
         } catch (error) {
-            throw new Error(error);
+            console.log(error);
         };
     };
 };
@@ -38,10 +38,10 @@ export const getGameGenre = () => {
             const genres = await axios.get("http://localhost:3001/genres");
             return dispatch({
                 type: GET_GENRE,
-                payload: genres
+                payload: genres.data
             });
         } catch (error) {
-            throw new Error(error);
+            console.log(error)
         };
     };
 };

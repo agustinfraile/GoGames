@@ -26,6 +26,11 @@ const rootReducer = (state = initialState, action) => {
                 ...state,
                 genres: action.payload
             }
+        default:
+            return {
+                ...state,
+            } ;
+
         
     }
 }

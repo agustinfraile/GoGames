@@ -1,0 +1,18 @@
+.nav-paginate{
+    /* background-color: red; */
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+}
+
+.nav-paginate-cnt {
+    width: 2em;
+    /* background-color: orange; */
+    
+}
+
+.nav-paginate-cnt--list {
+    background-color: #ccc;
+    width: 2em;
+    cursor: pointer;
+}
