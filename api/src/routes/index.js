@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const { allGames, allGenres, filterById } = require('../controllers');
+const { allGames, allGenres, filterById, filterByName } = require('../controllers');
 const router = Router();
 const { Videogame, Genre } = require("../db");
 
@@ -79,7 +79,7 @@ router.post("/videogames", async (req, res) => {
         where: { name: genres },
       });
   
-      game.addGenre(genreDB);
+      game.addGenres(genreDB);
       res.status(200).send('Videojuego creado exitosamente');
   
     } catch (error) {
