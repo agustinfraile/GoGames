@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getGameGenre, getGames, nameByOrder, gamesFiteredByGenres } from '../../redux/actions';
+import { Link } from 'react-router-dom';
+import { getGameGenre, getGames, nameByOrder, gamesFiteredByGenres, gamesFilteredByCreation } from '../../redux/actions';
 import GameCard from '../GameCard/GameCard'
 import Paginate from '../Paginate/Paginate';
+import SearchBar from '../SearchBar/SearchBar';
 import SelectGenres from '../SelectGenres/SelectGenres';
 import "./home.css";
 
@@ -38,6 +40,10 @@ const Home = () => {
 
     const handleFilteredGenres = (e) => {
         dispatch(gamesFiteredByGenres(e.target.value));
+    };
+
+    const handleFilteredCreates = (e) => {
+        dispatch(gamesFilteredByCreation(e.target.value));
     }
 
     const handleOrderName = (e) => {
@@ -48,6 +54,8 @@ const Home = () => {
 
     return (
         <div>
+
+            <SearchBar />
             
             <Paginate 
                 gamesPage = {gamesPage} 
@@ -67,7 +75,7 @@ const Home = () => {
                 <option value="peor">Peor ranking</option>
             </select>
 
-            <select>
+            <select onChange={e => handleFilteredCreates(e)}>
                 <option value="Todos">Todos los juegos</option>
                 <option value="Creados">Creados</option>
                 <option value="API">Existentes</option>
@@ -78,6 +86,9 @@ const Home = () => {
                 <SelectGenres allGenres = {allGenres} />
             </select>
 
+            <Link to='/game'>
+                <button>Crear videojuego</button>
+            </Link>
 
             {
                 currentGame?.map( game => {
@@ -89,6 +100,7 @@ const Home = () => {
                             image = {game.image}
                             genres = {game.genres}
                             rating = {game.rating}
+                            createInDb = {game.createInDb}
                         />
                     )
                 })
