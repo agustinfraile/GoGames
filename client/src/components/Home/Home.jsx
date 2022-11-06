@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getGameGenre, getGames, nameByOrder, gamesFiteredByGenres, gamesFilteredByCreation } from '../../redux/actions';
 import GameCard from '../GameCard/GameCard'
+import Loading from '../Loading/Loading';
 import Paginate from '../Paginate/Paginate';
 import SearchBar from '../SearchBar/SearchBar';
 import SelectGenres from '../SelectGenres/SelectGenres';
@@ -91,6 +92,7 @@ const Home = () => {
             </Link>
 
             {
+                currentGame.length ?
                 currentGame?.map( game => {
                     return (
                         <GameCard
@@ -104,6 +106,7 @@ const Home = () => {
                         />
                     )
                 })
+                : <Loading />
             }
 
         </div>
