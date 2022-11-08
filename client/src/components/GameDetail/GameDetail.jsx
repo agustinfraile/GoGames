@@ -19,7 +19,7 @@ const GameDetail = () => {
         dispatch(clearGameDetail());
     }, [dispatch, id])
 
-    console.log(detailGame)
+
 
 
 
@@ -45,7 +45,7 @@ const GameDetail = () => {
                         <div className='detail-cnt-info--desc'>
                             <div>
                                 <h2>Generos:</h2>
-                                    {console.log(detailGame.genres)}
+
                                 <div>
                                     {
                                         <p>

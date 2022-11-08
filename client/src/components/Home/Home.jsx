@@ -60,6 +60,14 @@ const Home = () => {
         }
     }
 
+    const reset = (e) => {
+        e.preventDefault()
+        dispatch(getGames())
+        setCurrentPage(1)
+
+    }
+
+
     return (
         <div >
 
@@ -70,6 +78,7 @@ const Home = () => {
                 handleFilteredCreates = {handleFilteredCreates}
                 handleFilteredGenres = {handleFilteredGenres}
                 allGenres = {allGenres}
+                reset = {reset}
             />
 
             {   

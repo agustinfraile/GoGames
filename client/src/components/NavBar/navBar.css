@@ -11,6 +11,11 @@
     height: 5em;
 }
 
+.navbar-cnt_logo img {
+    /* width: 50%; */
+    height: 5em;
+}
+
 .navbar-cnt_search {
     /* background-color: red; */
     width: 100%;

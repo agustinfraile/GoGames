@@ -44,7 +44,7 @@ const CreateGame = () => {
 
 
   const [errorIn, setErrorIn] = useState({});
-  console.log(errorIn)
+  
   const arrSet = [];
   games.map(games => games.platforms?.map(platfs => arrSet.push(platfs)))
   let newSet = [...new Set(arrSet)]
@@ -67,7 +67,7 @@ const CreateGame = () => {
       ...input,
       [e.target.name]:[e.target.value]
     }))
-    console.log(input)
+
   };
 
   const handleSelectGenres = (e) => {
@@ -89,7 +89,6 @@ const CreateGame = () => {
       ...input,
       platforms: [...input.platforms, e.target.value]
     });
-    console.log(input)
   };
 
   const handleSelectPlatformsDelete = (e) => {
@@ -106,7 +105,6 @@ const CreateGame = () => {
 
     const nameRepeat = games.filter(game => game.name === input.name);
     if(nameRepeat.length !== 0) {
-      // TODO: SACAR EL ALERT ES SOLO PRUEBA!!!!!!
       alert('Ya existe un juego con ese nombre, por favor elija otro')
       return
     } else {
@@ -128,7 +126,6 @@ const CreateGame = () => {
           image: "",
         });
 
-        // TODO: SACAR EL ALERT ES SOLO PRUEBA!!!!!!
         alert("VideoGame creado con exito");
       }
 

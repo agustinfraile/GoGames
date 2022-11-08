@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import SelectGenres from '../SelectGenres/SelectGenres';
 import "./filter.css";
 
-const Filters = ({ handleOrder, handleFilteredCreates, handleFilteredGenres, allGenres }) => {
+const Filters = ({ handleOrder, handleFilteredCreates, handleFilteredGenres, allGenres, reset }) => {
   return (
     <div className='filter-cnt'>
       <div className='select-order'>
@@ -37,10 +37,10 @@ const Filters = ({ handleOrder, handleFilteredCreates, handleFilteredGenres, all
         </Link>
       </div>
 
-      <div className='navbar-cnt_clear'>
-        <Link className='navbar-cnt_create--link' to='/game'>
-            <button className='navbar-cnt--button'>Limpiar filtros🔃</button>
-        </Link>
+      <div  className='navbar-cnt_clear'>
+        
+            <button onClick={reset} className='navbar-cnt--button'>Recargar🔃</button>
+        
       </div>
     </div>
   )

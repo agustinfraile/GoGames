@@ -13,7 +13,6 @@ const SearchBar = () => {
     const handleInputChange = (e) => {
         e.preventDefault();
         setName(e.target.value);
-        console.log(name)
     };
   
     const handleButtonSubmit = (e) => {

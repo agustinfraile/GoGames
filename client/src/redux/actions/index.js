@@ -90,7 +90,6 @@ export const gamesFilteredByCreation = (payload) => {
 };
 
 export const orderGame = (payload) => {
-    console.log(payload)
     return {
         type: ORDER_GAME,
         payload
@@ -98,7 +97,6 @@ export const orderGame = (payload) => {
 }
 
 export const nameByOrder = (payload) => {
-    console.log(payload)
     return {
         type: NAME_BY_ORDER,
         payload
@@ -106,7 +104,6 @@ export const nameByOrder = (payload) => {
 };
 
 export const nameByRating = (payload) => {
-    console.log(payload)
     return {
         type: RATING_BY_ORDER,
         payload
