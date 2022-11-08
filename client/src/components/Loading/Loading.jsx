@@ -1,9 +1,10 @@
 import React from 'react';
-import loadingGif from "../../images/loading-gif.gif"
+import loadingGif from "../../images/loading-gif.gif";
+import "./loading.css"
 
 const Loading = () => {
   return (
-    <div>
+    <div className='loading-cnt'>
         <img src={loadingGif} alt="Loading" />
     </div>
   )

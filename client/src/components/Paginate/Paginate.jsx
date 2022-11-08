@@ -12,21 +12,23 @@ const Paginate = ({gamesPage, allGames, paginate}) => {
 
 
     return(
-        <nav>
-            <ul className="nav-paginate">
-                {
-                    pageNumbers?.map( num => {
-                        return(
-                            <li className="nav-paginate-cnt" key={num}>
-                                <button className="nav-paginate-cnt--list" onClick={()=> paginate(num)}>
-                                    {num}
-                                </button>
-                            </li>
-                        )
-                    })
-                }
-            </ul>
-        </nav>
+        <div className='paginate-cnt'>
+            <nav>
+                <ul className="nav-paginate--ul">
+                    {
+                        pageNumbers?.map( num => {
+                            return(
+                                <li className="nav-paginate-cnt" key={num}>
+                                    <button className="nav-paginate-cnt--list" onClick={()=> paginate(num)}>
+                                        {num}
+                                    </button>
+                                </li>
+                            )
+                        })
+                    }
+                </ul>
+            </nav>
+        </div>
     )
 }
 

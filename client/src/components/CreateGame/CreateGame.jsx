@@ -26,7 +26,7 @@ const CreateGame = () => {
 
   const validateInputs = (input) => {
     // let regularExpRating = /[+-]?([0-9]*[.])?\b[0-5]{1,1}\b/; 
-    let regularExpNameDescription = /^\b[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s0-9-()]+$/;
+    let regularExpNameDescription = /^\b[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s0-9-(),.]+$/;
     let errorInput = {};
   
     if(!input.name) {
@@ -140,15 +140,13 @@ const CreateGame = () => {
   
 
   return (
-    <div>
-      <Link to="/home">
-        <button>Volver al inicio</button>
-      </Link>
+    <div className='createGame-cnt'>
+
 
       <h1>Crear videojuego</h1>
 
       <form onSubmit={e => handleFormSubmit(e)}>
-        <div>
+        <div className='form-name'>
           <label htmlFor='name'>Nombre:</label>
           <input 
             type='text'
@@ -166,7 +164,7 @@ const CreateGame = () => {
           }
         </div>
 
-        <div>
+        <div className='form-released'>
           <label>Fecha de lanzamiento:</label>
           <input 
             type='date' 
@@ -178,7 +176,7 @@ const CreateGame = () => {
           />
         </div>
 
-        <div>
+        <div className='form-rating'>
           <label>Puntaje: {`${range}`}</label>
           <input
             type='range' 
@@ -190,7 +188,7 @@ const CreateGame = () => {
           />
         </div>
         
-        <div>
+        <div className='form-description'>
           <label>Descripcion</label>
           <textarea 
             name="description"
@@ -207,10 +205,10 @@ const CreateGame = () => {
           }
         </div>
 
-        <div>
+        <div className='form-genres'>
           <label>Generos</label>
           <select onChange={e => handleSelectGenres(e)}>
-            <option value="generos">Generos</option>
+            <option selected disabled value="generos">Generos</option>
             {
               genres.map( genre => (
                 <option
@@ -232,7 +230,7 @@ const CreateGame = () => {
           }
         </div>
         
-        <div>
+        <div className='form-platforms'>
           <label>Plataformas</label>
           <select onChange={e => handleSelectPlatforms(e)}>
             <option value="platforms">Plataformas</option>
@@ -257,7 +255,7 @@ const CreateGame = () => {
           }
         </div>
 
-        <div>
+        <div className='form-image'>
           <label>Imagen</label>
           <input 
             value={input.image}
@@ -265,11 +263,15 @@ const CreateGame = () => {
             name="image" 
             placeholder='Agrega tu imagen'
             onChange={e => handleChange(e)}
+            
           />
         </div>
 
-        <button type='submit'>Crear videojuego</button>
+        <button className='btn-create' type='submit'>Crear videojuego</button>
       </form>
+      <Link to="/home">
+        <button>Volver al inicio</button>
+      </Link>
        
     </div>
   )

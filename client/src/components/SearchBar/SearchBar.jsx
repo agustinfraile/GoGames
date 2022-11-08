@@ -1,7 +1,8 @@
 import React from 'react'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { getGameName, GET_GAME_NAME } from '../../redux/actions'
+import { getGameName } from '../../redux/actions'
+import searchLogo from '../../images/search.png'
 import "./searchBar.css"
 
 const SearchBar = () => {
@@ -21,7 +22,7 @@ const SearchBar = () => {
     }
 
     return (
-        <div>
+        <form className='form-search-cnt'>
             <input 
                 type="text" 
                 placeholder='Buscar videojuego...'
@@ -31,9 +32,9 @@ const SearchBar = () => {
                 type='submit'
                 onClick={e => handleButtonSubmit(e)}
             >
-                Buscar
+                <img src={searchLogo} alt="" />
             </button>
-        </div>
+        </form>
     )
 }
 

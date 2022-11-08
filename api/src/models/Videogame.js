@@ -31,7 +31,7 @@ module.exports = (sequelize) => {
     },
     image: {
       type: DataTypes.STRING,
-      defaultValue: "https://i.ibb.co/xzx0YVd/descarga.png",
+      defaultValue: "https://i.ibb.co/xzx0YVd/descarga.png"
     },
     createInDb: {
       type: DataTypes.BOOLEAN,

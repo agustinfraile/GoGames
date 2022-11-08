@@ -1,18 +1,42 @@
-.nav-paginate{
+.paginate-cnt {
+    padding-top: 10vh;
+    /* background-color: #a7c7ff; */
+    width: 100%;
+    height: 13em;
+}
+
+.nav-paginate--ul{
     /* background-color: red; */
+    width: 100%;
+    height: 4em;
     display: flex;
     list-style-type: none;
     justify-content: center;
 }
 
 .nav-paginate-cnt {
-    width: 2em;
+    width: 4em;
     /* background-color: orange; */
-    
+    padding: .8em 0;
 }
 
 .nav-paginate-cnt--list {
-    background-color: #ccc;
-    width: 2em;
+    /* background-color: #ccc; */
+    box-shadow: 3px 3px 4px 1px  rgb(142, 140, 140);
+    border: none;
+    width: 3em;
+    height: 3em;
     cursor: pointer;
+    transition: .5s;
+
+}
+
+.nav-paginate-cnt--list:hover {
+    background-color: #ccc;
+    transition: .5s;
+}
+
+.nav-paginate-cnt--list:focus {
+    transform: scale(120%);
+    z-index: -1;
 }
