@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { getGameGenre, getGames, nameByOrder, gamesFiteredByGenres, gamesFilteredByCreation } from '../../redux/actions';
+import { getGameGenre, getGames, nameByOrder, gamesFiteredByGenres, gamesFilteredByCreation, nameByRating, orderGame } from '../../redux/actions';
 import GameCard from '../GameCard/GameCard'
 import Loading from '../Loading/Loading';
 import Paginate from '../Paginate/Paginate';
@@ -27,6 +27,8 @@ const Home = () => {
 
     const currentGame = allGames.slice(indexOfFirstGame, indexOfLastGame); 
 
+    const [order, setOrder] = useState("");
+
     const paginate = (pageNumber) => {
         setCurrentPage(pageNumber);
     };
@@ -41,17 +43,40 @@ const Home = () => {
 
     const handleFilteredGenres = (e) => {
         dispatch(gamesFiteredByGenres(e.target.value));
+        // setCurrentPage(0)
     };
 
     const handleFilteredCreates = (e) => {
         dispatch(gamesFilteredByCreation(e.target.value));
+        // setCurrentPage(1)
+
+    }
+
+    const handleOrder = (e) => {
+        e.preventDefault();
+        if(e.target.value === ''){
+            dispatch(getGames());
+        } else {
+            dispatch(orderGame(e.target.value))
+            setCurrentPage(1)
+        }
     }
 
     const handleOrderName = (e) => {
         e.preventDefault();
         dispatch(nameByOrder(e.target.value));
-
+        setCurrentPage(1);  
+        setOrder(`Ordenado ${e.target.value}`);
     }
+
+
+    const handleOrderRating = (e) => {
+        e.preventDefault();
+        dispatch(nameByRating(e.target.value));
+        setCurrentPage(1);
+        setOrder(`Ordenado ${e.target.value}`)
+    }
+
 
     return (
         <div>
@@ -64,16 +89,12 @@ const Home = () => {
                 paginate = {paginate} 
             />
 
-            <select onChange={e => handleOrderName(e)}>
-                {/* <option selected disabled value="">Ordenar alfabeticamente</option> */}
-                <option value="A-Z">A-Z</option>
-                <option value="Z-A">Z-A</option>
-            </select>
-
-            <select>
-                <option value="">Ordenar por ranking</option>
-                <option value="mejor">Mejor ranking</option>
-                <option value="peor">Peor ranking</option>
+            <select onChange={e => handleOrder(e)}>
+                <option value="">Ordenar por...</option>
+                <option value="Asc">Ordenar de la A-Z</option>
+                <option value="Des">Ordenar de la Z-A</option>
+                <option value="Mejor">Mejor Ranking</option>
+                <option value="Peor">Peor Ranking</option>
             </select>
 
             <select onChange={e => handleFilteredCreates(e)}>
@@ -95,15 +116,20 @@ const Home = () => {
                 currentGame.length ?
                 currentGame?.map( game => {
                     return (
-                        <GameCard
-                            id = {game.id} 
+                        <Link 
+                            to={`/game/${game.id}`}
                             key = {game.id}
-                            name = {game.name}
-                            image = {game.image}
-                            genres = {game.genres}
-                            rating = {game.rating}
-                            createInDb = {game.createInDb}
-                        />
+                        >
+                            <GameCard
+                                id = {game.id} 
+                                key = {game.id}
+                                name = {game.name}
+                                image = {game.image}
+                                genres = {game.genres}
+                                rating = {game.rating}
+                                createInDb = {game.createInDb}
+                            />
+                        </Link>
                     )
                 })
                 : <Loading />

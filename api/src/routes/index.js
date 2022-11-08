@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const { allGames, allGenres, filterById, filterByName } = require('../controllers');
+const { allGames, allGenres, filterById } = require('../controllers');
 const router = Router();
 const { Videogame, Genre } = require("../db");
 
@@ -43,7 +43,7 @@ router.get("/genres", async (req, res) => {
         const genApi = await allGenres() 
         res.status(200).json(genApi);
       } catch(error) {
-          console.log(error)
+          res.status(500).send({error: 'Hubo un problema al cargar los generos'})
       }
 });
 

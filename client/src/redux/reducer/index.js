@@ -5,17 +5,18 @@ import {
     GAMES_FILTERED_BY_GENRES,
     GAMES_FILTERED_BY_CREATION,
     NAME_BY_ORDER, 
+    RATING_BY_ORDER, 
+    ORDER_GAME,
     GET_GAME_NAME,
-    GAME_POST
+    GAME_POST,
+    RESET_GAME_DETAIL
 } from "../actions";
 
 const initialState = {
     games: [],
     allGames: [],
     game: [],
-    genres: [],
-    gamesDetail: {},
-    platforms: []
+    genres: []
 }
 
 const rootReducer = (state = initialState, action) => {
@@ -29,7 +30,7 @@ const rootReducer = (state = initialState, action) => {
         case GET_GAME:
             return {
                 ...state,
-                games: action.payload
+                game: action.payload
             }
         case GET_GENRE:
             return {
@@ -52,17 +53,73 @@ const rootReducer = (state = initialState, action) => {
                 games: genresFiltered
             }
         case GAMES_FILTERED_BY_CREATION:
-            // const allVideogamesFilter = state.allVideogamesFilter;
+            const allVideogamesFilter = state.allGames;
             const filterCreated = action.payload === 'Creados'
-            ? state.allGames.filter(game => game.createInDb)
-            : state.allGames.filter(game => !game.createInDb)
+            ? allVideogamesFilter.filter(game => game.createInDb)
+            : allVideogamesFilter.filter(game => !game.createInDb)
+
             return {
                 ...state,
-                games: filterCreated
+                games: action.payload === 'Todos' ? state.allGames : filterCreated
             }
+        case ORDER_GAME : {
+            let allGamesOrder = [...state.allGames];
+            let allOrder;
+
+            switch(action.payload) {
+                case 'Todos': 
+                    allOrder = [...state.allGames];
+                    break;
+                case "Asc":
+                    allOrder = allGamesOrder.sort((a,b) => {
+                        if(a.name.toLowerCase() > b.name.toLowerCase()){
+                            return 1;
+                        }
+                        if(a.name.toLowerCase() < b.name.toLowerCase()){
+                            return -1;
+                        }
+                        return 0;
+                    });
+                    break;
+                case "Des":
+                    allOrder = allGamesOrder.sort((a,b) => {
+                        if(a.name.toLowerCase() < b.name.toLowerCase()){
+                            return 1;
+                        }
+                        if(a.name.toLowerCase() > b.name.toLowerCase()){
+                            return -1;
+                        }
+                        return 0;
+                    });
+                    break;
+                case "Peor":
+                    allOrder = allGamesOrder.sort((a, b) => {
+                        return a.rating - b.rating;
+                    });
+                    break;
+                case "Mejor":
+                    allOrder = allGamesOrder.sort((a, b) => {
+                        return b.rating - a.rating;
+                    });
+                    break;
+                default:
+                    allOrder = allGamesOrder
+                    break;
+            }
+            return {
+                ...state,
+                allGames: allOrder,
+                games: allOrder
+            }
+        }
         case GAME_POST:
             return {
                 ...state,
+            }
+        case RESET_GAME_DETAIL:
+            return {
+                ...state,
+                game: []
             }
         default:
             return {

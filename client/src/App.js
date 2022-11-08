@@ -11,9 +11,9 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Route exact path='/' component={Landing} />
-        <Route path='/home' component={Home} />
-        <Route path='/game' component={CreateGame} />
-        <Route path='/game:id' component={GameDetail} />
+        <Route exact path='/home' component={Home} />
+        <Route exact path='/game' component={CreateGame} />
+        <Route path='/game/:id' component={GameDetail} />
       </div>
     </BrowserRouter>
   );

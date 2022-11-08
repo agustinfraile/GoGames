@@ -6,8 +6,11 @@ export const GET_GENRE = "GET_GENRE";
 export const GAMES_FILTERED_BY_GENRES = 'GAMES_FILTERED_BY_GENRES';
 export const GAMES_FILTERED_BY_CREATION = 'GAMES_FILTERED_BY_CREATION';
 export const NAME_BY_ORDER = "NAME_BY_ORDER";
+export const RATING_BY_ORDER = "RATING_BY_ORDER";
+export const ORDER_GAME = "ORDER_GAME";
 export const GET_GAME_NAME = "GET_GAME_NAME";
 export const GAME_POST = 'GAME_POST'; 
+export const RESET_GAME_DETAIL = "RESET_GAME_DETAIL";
 
 export const getGames = () => {
     return async function(dispatch) {
@@ -23,7 +26,7 @@ export const getGames = () => {
     };
 };
 
-export const getGameDeails = (id) => {
+export const getGameDetails = (id) => {
     return async function(dispatch) {
         try {
             const { data } = await axios.get(`http://localhost:3001/videogame/${id}`);
@@ -86,6 +89,14 @@ export const gamesFilteredByCreation = (payload) => {
     };
 };
 
+export const orderGame = (payload) => {
+    console.log(payload)
+    return {
+        type: ORDER_GAME,
+        payload
+    };
+}
+
 export const nameByOrder = (payload) => {
     console.log(payload)
     return {
@@ -93,3 +104,17 @@ export const nameByOrder = (payload) => {
         payload
     };
 };
+
+export const nameByRating = (payload) => {
+    console.log(payload)
+    return {
+        type: RATING_BY_ORDER,
+        payload
+    };
+};
+
+export const clearGameDetail = () => {
+    return {
+        type: RESET_GAME_DETAIL
+    }
+}
