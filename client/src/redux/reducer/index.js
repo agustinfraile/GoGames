@@ -125,11 +125,6 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
             }
-        case RESET_GAME_DETAIL:
-            return {
-                ...state,
-                game: []
-            }
         default:
             return {
                 ...state,

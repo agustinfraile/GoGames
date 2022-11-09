@@ -39,4 +39,5 @@
 .nav-paginate-cnt--list:focus {
     transform: scale(120%);
     z-index: -1;
+    font-weight: bolder;
 }
