@@ -32,7 +32,7 @@ const SearchBar = () => {
                 type='submit'
                 onClick={e => handleButtonSubmit(e)}
             >
-                <img src={searchLogo} alt="" />
+                <img src={searchLogo} alt="search icon" />
             </button>
         </form>
     )

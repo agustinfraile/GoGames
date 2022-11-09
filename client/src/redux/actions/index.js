@@ -68,6 +68,10 @@ export const getGameName = (name) => {
             })
         } catch (error) {
             console.log(error)
+            return dispatch ({
+                type: GET_GAME_NAME,
+                payload: []
+            })
         }
     }
 };
