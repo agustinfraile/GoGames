@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useParams } from 'react-router-dom'
-import { getGameDetails, getGames } from '../../redux/actions'
+import { getGameDetails } from '../../redux/actions'
 import Error from '../Error/Error'
 import Loading from '../Loading/Loading'
 import "./gameDetail.css"
@@ -12,33 +12,45 @@ const GameDetail = () => {
   
     const dispatch = useDispatch();
     let detailGame = useSelector(state => state.game);
-    let games = useSelector(state => state.games)
     const { id } = useParams();
     const [loader, setLoader] = useState(true);
-    console.log(detailGame)
-    console.log(games)
+
 
     useEffect(() => {
         dispatch(getGameDetails(id)).then(() => setLoader(false));
-        dispatch(getGames())
     }, [dispatch, id])
 
-
-    let filt = games.map( i => i.id === id) 
-    console.log(filt)
 
     if(loader) {
         return <Loading />
     }
 
+    let filter;
+    const filterId = () => {
+        if(detailGame.createInDb) {
+            filter = detailGame.id
+        } else {
+            filter = Number(id);
+        }
+        return filter
+    }
+
     {   
         return (
-            filt.includes(true) ? 
+            filterId() ?
                 <div className='gameDetail-cnt'>           
                     <div className='detail-cnt--general'>
 
                         <div className='detail-cnt-name'>
                             <h1>{detailGame.name}</h1>
+                        </div>
+
+                        <div className='detail-cnt-name'>
+                            <h1>
+                                {
+                                    filter
+                                }
+                            </h1>
                         </div>
 
                         <div className='detail-cnt-info'>
@@ -107,7 +119,7 @@ const GameDetail = () => {
                         </div>                  
                     </div>
                 </div>   
-            : 
+            :
             <Error />
         )
     }

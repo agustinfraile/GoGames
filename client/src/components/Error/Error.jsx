@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 
 const Error = () => {
@@ -6,7 +7,9 @@ const Error = () => {
   return (
     <div>
         <h1>No se encontro ningun videojuego 😓</h1>
-        <button>Volver al inicio</button>
+        <Link to='/home'>
+          <button>Volver al inicio</button>
+        </Link>
     </div>
   )
 }
