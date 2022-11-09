@@ -6,7 +6,7 @@
 }
 
 .select-order--group {
-    background-color: rgba(0, 0, 0, 0.537);
+    background-color: rgba(0, 0, 0, 0);
     border: 0;
     outline: none;
     height: 4em;
@@ -14,6 +14,11 @@
     font-size: 1em;
     color: rgb(255, 255, 255);
 } 
+
+.select-order--group option {
+    background-color: #39284d;
+    color: #fff;
+}
 
 .select-order {
     /* background-color: orange; */

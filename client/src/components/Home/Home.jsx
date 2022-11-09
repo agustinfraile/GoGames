@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { getGameGenre, getGames, gamesFiteredByGenres, gamesFilteredByCreation, orderGame } from '../../redux/actions';
+import { getGameGenre, getGames, gamesFiteredByGenres, gamesFilteredByCreation, orderGame, filterThreeGenres } from '../../redux/actions';
 import AllGameCards from '../AllGameCards/AllGameCards';
 import Filters from '../Filters/Filters';
 
@@ -71,7 +71,6 @@ const Home = () => {
         setCurrentPage(1)
     }
 
-
     return (
         <div >
 
@@ -87,12 +86,10 @@ const Home = () => {
 
             <h4>Pagina: {currentPage}</h4>  
 
-
             <AllGameCards 
                 currentGame = {currentGame}
             /> 
             
-
             <Paginate 
                 gamesPage = {gamesPage} 
                 allGames = {allGames.length} 

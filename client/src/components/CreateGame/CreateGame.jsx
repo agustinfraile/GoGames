@@ -25,7 +25,6 @@ const CreateGame = () => {
 
 
   const validateInputs = (input) => {
-    // let regularExpRating = /[+-]?([0-9]*[.])?\b[0-5]{1,1}\b/; 
     let regularExpNameDescription = /^\b[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s0-9-(),.]+$/;
     let errorInput = {};
   

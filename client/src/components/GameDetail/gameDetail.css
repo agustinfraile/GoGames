@@ -1,7 +1,7 @@
 .gameDetail-cnt {
-    /* background-color: rebeccapurple; */
-    /* background-color: #a7c7ff; */
+    background-image: url(../../images/bgImage.png);
     width: 100%;
+    min-height: 100vh;
     height: 100%;
     padding-top: 5vh;
     /* display: flex; */
@@ -14,18 +14,21 @@
 }
 
 .detail-cnt-name {
-    /* background-color: blue; */
+    /* background-color: rgba(255, 255, 255, 0.061); */
     width: 100%;
 }
 
 .detail-cnt-name h1 {
     font-size: 2.4em;
+    background-color: rgba(255, 255, 255, 0.061);
+    color: rgba(255, 255, 255, 0.784);
+
 }
 
 
 
 .detail-cnt-info img {
-    width: 80%;
+    width: 60%;
     box-shadow: 3px 3px 5px 2px rgba(0, 0, 0, 0.748);
     border-radius: 20px;
     /* height: 20em; */
@@ -34,8 +37,11 @@
 
 
 .detail-cnt-info--desc {
-    /* background-color: yellow; */
+    background-color: rgba(255, 255, 255, 0.274);
+    width: 60%;
+    margin: 0 auto;
     padding: 1em;
+    color: rgb(205, 205, 205);
 }
 
 .detail-cnt-info--desc span {

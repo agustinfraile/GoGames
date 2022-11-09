@@ -21,7 +21,7 @@ router.get("/videogames", async (req, res) => {
         };
 
     } catch (error) {
-        res.status(500).send({error: "No hay videojuegos con ese nombre"});
+        res.status(500).send({error: "Datos invalidos"});
     };
 });
 

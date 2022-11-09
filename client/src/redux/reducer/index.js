@@ -6,8 +6,7 @@ import {
     GAMES_FILTERED_BY_CREATION,
     ORDER_GAME,
     GET_GAME_NAME,
-    GAME_POST,
-    RESET_GAME_DETAIL
+    GAME_POST
 } from "../actions";
 
 const initialState = {
@@ -124,11 +123,6 @@ const rootReducer = (state = initialState, action) => {
         case GAME_POST:
             return {
                 ...state,
-            }
-        case RESET_GAME_DETAIL:
-            return {
-                ...state,
-                game: []
             }
         default:
             return {

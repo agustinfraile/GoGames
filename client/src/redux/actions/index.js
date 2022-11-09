@@ -9,8 +9,7 @@ export const NAME_BY_ORDER = "NAME_BY_ORDER";
 export const RATING_BY_ORDER = "RATING_BY_ORDER";
 export const ORDER_GAME = "ORDER_GAME";
 export const GET_GAME_NAME = "GET_GAME_NAME";
-export const GAME_POST = 'GAME_POST'; 
-export const RESET_GAME_DETAIL = "RESET_GAME_DETAIL";
+export const GAME_POST = 'GAME_POST';
 
 export const getGames = () => {
     return async function(dispatch) {
@@ -117,9 +116,3 @@ export const nameByRating = (payload) => {
         payload
     };
 };
-
-export const clearGameDetail = () => {
-    return {
-        type: RESET_GAME_DETAIL
-    }
-}
