@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getGameGenre, getGames, gamesFiteredByGenres, gamesFilteredByCreation, orderGame, filterThreeGenres } from '../../redux/actions';
 import AllGameCards from '../AllGameCards/AllGameCards';
 import Filters from '../Filters/Filters';
+import Loading from '../Loading/Loading';
 
 import NavBar from '../NavBar/NavBar';
 import Paginate from '../Paginate/Paginate';
@@ -28,6 +29,9 @@ const Home = () => {
 
     const currentGame = allGames.slice(indexOfFirstGame, indexOfLastGame); 
 
+    const [loader, setLoader] = useState(true);
+
+
 
     const paginate = (pageNumber) => {
         setCurrentPage(pageNumber);
@@ -36,6 +40,12 @@ const Home = () => {
     useEffect(() => {
         dispatch(getGameGenre());
 
+    }, [dispatch]);
+
+    useEffect(() => {
+        if(!allGames.length) {
+            dispatch(getGames()).then(() => setLoader(false));
+        }
     }, [dispatch]);
 
 
@@ -71,6 +81,7 @@ const Home = () => {
         setCurrentPage(1)
     }
 
+
     return (
         <div >
 
@@ -88,6 +99,7 @@ const Home = () => {
 
             <AllGameCards 
                 currentGame = {currentGame}
+                allGames = {allGames}
             /> 
             
             <Paginate 

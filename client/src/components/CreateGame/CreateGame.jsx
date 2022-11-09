@@ -70,10 +70,12 @@ const CreateGame = () => {
   };
 
   const handleSelectGenres = (e) => {
-    setInput({
-      ...input,
-      genres: [...input.genres, e.target.value]
-    });
+    if(!input.genres.includes(e.target.value)) {
+      setInput({
+        ...input,
+        genres: [...input.genres, e.target.value]
+      });
+    }
   };
 
   const handleSelectGenresDelete = (e) => {
@@ -84,10 +86,12 @@ const CreateGame = () => {
   }
 
   const handleSelectPlatforms = (e) => {
-    setInput({
-      ...input,
-      platforms: [...input.platforms, e.target.value]
-    });
+    if(!input.platforms.includes(e.target.value)) {
+      setInput({
+        ...input,
+        platforms: [...input.platforms, e.target.value]
+      });
+    }
   };
 
   const handleSelectPlatformsDelete = (e) => {

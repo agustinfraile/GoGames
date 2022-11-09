@@ -11,18 +11,9 @@ import "./allGameCards.css"
 
 
 
-const AllGameCards = ({currentGame}) => {
-    const dispatch = useDispatch();
-    const [loader, setLoader] = useState(true);
+const AllGameCards = ({currentGame, allGames}) => {
     
-    useEffect(() => {
-        dispatch(getGames()).then(() => setLoader(false));
-    }, [dispatch]);
-    
-    
-    if(loader) {
-        return <Loading />
-    }
+
   return (
     <div className='allGames'>
         <div className='allGames-cnt'>
