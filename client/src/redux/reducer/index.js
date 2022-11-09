@@ -1,4 +1,3 @@
-import AllGameCards from "../../components/AllGameCards/AllGameCards";
 import {    
     GET_GAME, 
     GET_GAMES, 
@@ -60,7 +59,7 @@ const rootReducer = (state = initialState, action) => {
 
             return {
                 ...state,
-                games: allVideoGames,
+                games: action.payload === 'Todos' ? state.allGames : allVideoGames,
             }
         case GAMES_FILTERED_BY_CREATION:
             const allVideogamesFilter = state.allGames;

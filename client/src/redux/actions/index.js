@@ -35,7 +35,11 @@ export const getGameDetails = (id) => {
                 payload: data
             });
         } catch (error) {
-            throw new Error(error);
+            console.log(error)
+            return dispatch ({
+                type: GET_GAME,
+                payload: []
+            })
         };
     };
 };
@@ -64,6 +68,10 @@ export const getGameName = (name) => {
             })
         } catch (error) {
             console.log(error)
+            return dispatch ({
+                type: GET_GAME_NAME,
+                payload: []
+            })
         }
     }
 };

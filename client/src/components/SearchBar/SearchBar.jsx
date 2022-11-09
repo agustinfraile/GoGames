@@ -18,6 +18,7 @@ const SearchBar = () => {
     const handleButtonSubmit = (e) => {
         e.preventDefault();
         dispatch(getGameName(name));
+        setName('');
     }
 
     return (

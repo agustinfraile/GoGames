@@ -5,7 +5,6 @@ import { getGameGenre, getGames, gamesFiteredByGenres, gamesFilteredByCreation, 
 import AllGameCards from '../AllGameCards/AllGameCards';
 import Filters from '../Filters/Filters';
 
-import Loading from '../Loading/Loading';
 import NavBar from '../NavBar/NavBar';
 import Paginate from '../Paginate/Paginate';
 
@@ -30,28 +29,30 @@ const Home = () => {
     const currentGame = allGames.slice(indexOfFirstGame, indexOfLastGame); 
 
 
-
     const paginate = (pageNumber) => {
         setCurrentPage(pageNumber);
     };
 
     useEffect(() => {
-        dispatch(getGames());
+        dispatch(getGameGenre());
+
     }, [dispatch]);
 
+
+
     useEffect(() => {
-        dispatch(getGameGenre());
-    }, [dispatch]);
+        window.scrollTo(0, 0);
+    }, [currentPage])
+
+
 
     const handleFilteredGenres = (e) => {
         dispatch(gamesFiteredByGenres(e.target.value));
         setCurrentPage(1);
-        e.target.value = 'Todos';
     };
 
     const handleFilteredCreates = (e) => {
         dispatch(gamesFilteredByCreation(e.target.value));
-        e.target.value = 'Todos';
     }
 
     const handleOrder = (e) => {
@@ -68,14 +69,12 @@ const Home = () => {
         e.preventDefault()
         dispatch(getGames())
         setCurrentPage(1)
-
     }
 
 
     return (
         <div >
 
-            
             <NavBar />
             
             <Filters 
@@ -86,20 +85,19 @@ const Home = () => {
                 reset = {reset}
             />
 
+            <h4>Pagina: {currentPage}</h4>  
+
+
+            <AllGameCards 
+                currentGame = {currentGame}
+            /> 
+            
+
             <Paginate 
                 gamesPage = {gamesPage} 
                 allGames = {allGames.length} 
                 paginate = {paginate} 
             />
-
-            {   
-                currentGame.length ?
-                <AllGameCards 
-                    currentGame = {currentGame}
-                /> 
-                : <Loading />
-            }
-
         </div>
     )
 }

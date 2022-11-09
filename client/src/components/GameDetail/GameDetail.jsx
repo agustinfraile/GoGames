@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Link, useHistory, useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { getGameDetails, clearGameDetail } from '../../redux/actions'
+import Error from '../Error/Error'
 import Loading from '../Loading/Loading'
 import "./gameDetail.css"
 
@@ -12,24 +13,27 @@ const GameDetail = () => {
     const dispatch = useDispatch();
     let detailGame = useSelector(state => state.game);
     const { id } = useParams();
+    const [loader, setLoader] = useState(true);
+
 
     useEffect(() => {
-
-        dispatch(getGameDetails(id));
+        dispatch(getGameDetails(id)).then(() => setLoader(false));
         dispatch(clearGameDetail());
     }, [dispatch, id])
 
 
 
-
+    if(loader) {
+        return <Loading />
+    }
 
     return (
     <div className='gameDetail-cnt'>
 
 
         {
-            detailGame.name?
-
+           
+            detailGame ?
             
                 <div className='detail-cnt--general'>
 
@@ -103,8 +107,8 @@ const GameDetail = () => {
                     </div>                  
                 </div>
             
-        
-            : <Loading />
+            : <Error />
+            
         }
     </div>
   )

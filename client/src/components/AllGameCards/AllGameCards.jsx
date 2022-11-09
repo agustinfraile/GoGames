@@ -1,32 +1,53 @@
 import React from 'react';
+import { useEffect } from 'react';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { getGames } from '../../redux/actions';
+import Error from '../Error/Error';
 import GameCard from '../GameCard/GameCard';
+import Loading from '../Loading/Loading';
 import "./allGameCards.css"
 
+
+
 const AllGameCards = ({currentGame}) => {
+    const dispatch = useDispatch();
+    const [loader, setLoader] = useState(true);
+    
+    useEffect(() => {
+        dispatch(getGames()).then(() => setLoader(false));
+    }, [dispatch]);
+    
+    
+    if(loader) {
+        return <Loading />
+    }
   return (
     <div className='allGames'>
         <div className='allGames-cnt'>
             {
-                currentGame?.map( game => {
-                    return (
-                        <Link 
-                            className='allGames-cnt--link'
-                            to={`/game/${game.id}`}
-                            key = {game.id}
-                        >
-                            <GameCard
-                                id = {game.id} 
+                currentGame.length > 0 ?
+                    currentGame?.map( game => {
+                        return (
+                            <Link 
+                                className='allGames-cnt--link'
+                                to={`/game/${game.id}`}
                                 key = {game.id}
-                                name = {game.name}
-                                image = {game.image}
-                                genres = {game.genres}
-                                rating = {game.rating}
-                                createInDb = {game.createInDb}
-                            />
-                        </Link>
-                    )
-                })
+                            >
+                                <GameCard
+                                    id = {game.id} 
+                                    key = {game.id}
+                                    name = {game.name}
+                                    image = {game.image}
+                                    genres = {game.genres}
+                                    rating = {game.rating}
+                                    createInDb = {game.createInDb}
+                                />
+                            </Link>
+                        )
+                    })
+                : <Error />
             }   
         </div>
     </div>
