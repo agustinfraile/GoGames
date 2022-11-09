@@ -19,7 +19,7 @@ const Paginate = ({gamesPage, allGames, paginate}) => {
                         pageNumbers?.map( num => {
                             return(
                                 <li className="nav-paginate-cnt" key={num}>
-                                    <button className="nav-paginate-cnt--list" onClick={()=> paginate(num)}>
+                                    <button href='#top' className="nav-paginate-cnt--list" onClick={()=> paginate(num)}>
                                         {num}
                                     </button>
                                 </li>

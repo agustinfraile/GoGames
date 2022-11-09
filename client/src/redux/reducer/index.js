@@ -1,3 +1,4 @@
+import AllGameCards from "../../components/AllGameCards/AllGameCards";
 import {    
     GET_GAME, 
     GET_GAMES, 
@@ -41,14 +42,25 @@ const rootReducer = (state = initialState, action) => {
                 games: action.payload
             }
         case GAMES_FILTERED_BY_GENRES:
-            const allVideogames = state.allGames;
-            const genresFiltered = action.payload === 'Todos' 
-            ? allVideogames
-            :  allVideogames.filter(
-                game => game.genres?.includes(action.payload))
+            let allVideoGames = [];
+            if(action.payload) {
+                allVideoGames = state.games.filter(games => {
+                    if(games.genres.length === 0){
+                        return games.genres
+                    }
+                    else if(games.genres.some(gen => gen.name === action.payload)) {
+                        return games.genres.map(genre => genre.name)
+                    } else {
+                        return games.genres.includes(action.payload)
+                    }
+                })
+            } else {
+                allVideoGames = state.games
+            }
+
             return {
                 ...state,
-                games: genresFiltered
+                games: allVideoGames,
             }
         case GAMES_FILTERED_BY_CREATION:
             const allVideogamesFilter = state.allGames;

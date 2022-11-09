@@ -30,6 +30,7 @@ const Home = () => {
     const currentGame = allGames.slice(indexOfFirstGame, indexOfLastGame); 
 
 
+
     const paginate = (pageNumber) => {
         setCurrentPage(pageNumber);
     };
@@ -44,10 +45,13 @@ const Home = () => {
 
     const handleFilteredGenres = (e) => {
         dispatch(gamesFiteredByGenres(e.target.value));
+        setCurrentPage(1);
+        e.target.value = 'Todos';
     };
 
     const handleFilteredCreates = (e) => {
         dispatch(gamesFilteredByCreation(e.target.value));
+        e.target.value = 'Todos';
     }
 
     const handleOrder = (e) => {
@@ -71,6 +75,7 @@ const Home = () => {
     return (
         <div >
 
+            
             <NavBar />
             
             <Filters 
@@ -81,6 +86,12 @@ const Home = () => {
                 reset = {reset}
             />
 
+            <Paginate 
+                gamesPage = {gamesPage} 
+                allGames = {allGames.length} 
+                paginate = {paginate} 
+            />
+
             {   
                 currentGame.length ?
                 <AllGameCards 
@@ -89,12 +100,6 @@ const Home = () => {
                 : <Loading />
             }
 
-
-            <Paginate 
-                gamesPage = {gamesPage} 
-                allGames = {allGames.length} 
-                paginate = {paginate} 
-            />
         </div>
     )
 }
