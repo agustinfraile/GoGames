@@ -45,14 +45,6 @@ const GameDetail = () => {
                             <h1>{detailGame.name}</h1>
                         </div>
 
-                        <div className='detail-cnt-name'>
-                            <h1>
-                                {
-                                    filter
-                                }
-                            </h1>
-                        </div>
-
                         <div className='detail-cnt-info'>
                             <div>
                                 <img src={detailGame.image} alt={`Imagen de ${detailGame.name}`} title={`Imagen de ${detailGame.name} `} width='600px'/>
