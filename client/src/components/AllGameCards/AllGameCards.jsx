@@ -1,12 +1,7 @@
 import React from 'react';
-import { useEffect } from 'react';
-import { useState } from 'react';
-import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { getGames } from '../../redux/actions';
 import Error from '../Error/Error';
 import GameCard from '../GameCard/GameCard';
-import Loading from '../Loading/Loading';
 import "./allGameCards.css"
 
 
