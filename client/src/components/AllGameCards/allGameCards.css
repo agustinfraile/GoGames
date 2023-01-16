@@ -1,16 +1,17 @@
 .allGames {
+    /* background-color: rgb(191, 98, 98); */
+    width: 90%;
     margin: 0 auto;
     display: inline-block;
-    width: 90%;
-    background-color: #fff;
     padding-top: 4vh;
+    padding-bottom: 4vh;
 }
 
 .allGames-cnt {
     width: 100%;
-    /* background-color: #000; */
+    /* background-color: rgba(0, 0, 0, 0.427); */
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: 2em;
     
     /* column-gap: 15em; */   

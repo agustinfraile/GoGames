@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import {Link, useHistory} from "react-router-dom";
 import {postGame, getGameGenre, getGames} from "../../redux/actions/index";
 import {useDispatch, useSelector} from "react-redux";
+import Button from '../Button/Button';
 import "./createGame.css";
 
 const CreateGame = () => {
@@ -142,12 +143,14 @@ const CreateGame = () => {
   return (
     <div className='createGame-cnt'>
 
-
-      <h1>Crear videojuego</h1>
+      <div className='createGame-cnt-title'>
+        <h1>Crear un videojuego</h1>
+      </div>
 
       <form onSubmit={e => handleFormSubmit(e)}>
+        
         <div className='form-name'>
-          <label htmlFor='name'>Nombre:</label>
+          <label htmlFor='name'>Nombre</label>
           <input 
             type='text'
             value={input.name}
@@ -220,14 +223,22 @@ const CreateGame = () => {
               ))
             }
           </select>
+
+          <div className='select-opt'>
           {
             input.genres.map(e =>
-              <div key={e}>
+              <div 
+              key={e}
+              className='genres-opts'
+              >
+                
                   <button onClick={()=> handleSelectGenresDelete(e)}>X</button>
                   <span>{e}</span>
+                
               </div>
             )
           }
+          </div>
         </div>
         
         <div className='form-platforms'>
@@ -245,14 +256,20 @@ const CreateGame = () => {
               ))
             }
           </select>
+
+          <div className='select-opt'>
           {
             input.platforms.map(e =>
-              <div key={e}>
+              <div 
+                key={e}
+                className='genres-opts'
+              >
                   <button onClick={()=> handleSelectPlatformsDelete(e)}>X</button>
                   <span>{e}</span>
               </div>
             )
           }
+          </div>
         </div>
 
         <div className='form-image'>
@@ -267,12 +284,12 @@ const CreateGame = () => {
           />
         </div>
 
-        <button className='btn-create' type='submit'>Crear videojuego</button>
+        <Button text={'Crear juego'}/>
+        <Link to="/home">
+          <Button text={'Volver al inicio'}/>
+        </Link>
       </form>
-      <Link to="/home">
-        <button>Volver al inicio</button>
-      </Link>
-       
+  
     </div>
   )
 }

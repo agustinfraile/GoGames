@@ -31,10 +31,12 @@ const Home = () => {
 
     const [loader, setLoader] = useState(true);
 
+    const [selectedPage, setSelectedPage] = useState(1);
 
 
     const paginate = (pageNumber) => {
         setCurrentPage(pageNumber);
+        setSelectedPage(pageNumber);
     };
 
     useEffect(() => {
@@ -83,30 +85,33 @@ const Home = () => {
 
 
     return (
-        <div >
+        <div className='home-container'>
 
-            <NavBar />
+            {/* <NavBar /> */}
             
-            <Filters 
+            {/* <Filters 
                 handleOrder={handleOrder} 
                 handleFilteredCreates = {handleFilteredCreates}
                 handleFilteredGenres = {handleFilteredGenres}
                 allGenres = {allGenres}
                 reset = {reset}
-            />
+            /> */}
 
-            <h4>Pagina: {currentPage}</h4>  
+            {/* <h4>Pagina: {currentPage}</h4>   */}
 
             <AllGameCards 
                 currentGame = {currentGame}
                 allGames = {allGames}
             /> 
             
-            <Paginate 
-                gamesPage = {gamesPage} 
-                allGames = {allGames.length} 
-                paginate = {paginate} 
-            />
+            <div className='home-container_paginate'>
+                <Paginate 
+                    gamesPage = {gamesPage} 
+                    allGames = {allGames.length} 
+                    paginate = {paginate} 
+                    selectedPage = {selectedPage}
+                />
+            </div>
         </div>
     )
 }
