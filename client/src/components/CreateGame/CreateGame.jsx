@@ -280,18 +280,19 @@ const CreateGame = () => {
             name="image" 
             placeholder='Agrega tu imagen'
             onChange={e => handleChange(e)}
-            
           />
         </div>
 
-        <Button text={'Crear juego'}/>
-        <Link to="/home">
-          <Button text={'Volver al inicio'}/>
-        </Link>
+        <div className='form-buttons'>
+          <Button text={'Crear juego'} type='submit'/>
+          <Link to="/home">
+            <Button text={'Volver al inicio'}/>
+          </Link>
+        </div>
       </form>
   
     </div>
   )
 }
 
-export default CreateGame
+export default CreateGame;

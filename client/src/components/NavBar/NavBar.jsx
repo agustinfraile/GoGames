@@ -14,29 +14,38 @@ const NavBar = () => {
     setIsToggled(!isToggled);
   }
 
+  const handleClick = () => {
+    setIsToggled(false);
+  }
+
   return (
     <div className='navbar-cnt'>
 
         <div className='navbar-cnt--box'>
           <Link to='/'>
-            <div className='navbar-cnt_logo'>
+            <div className='navbar-cnt_logo' onClick={handleClick}>
                 <img src={logo} alt="Logo" />
             </div>
           </Link>
 
-          <div className='navbar-cnt_menu'  onClick={toggleMenu}>
+          <div 
+            className='navbar-cnt_menu'  
+            onClick={toggleMenu}
+          >
             <img src={isToggled ? close : menu} alt="Menu" />
           </div>
         </div>
 
-        <div className={`navbar-toggle ${isToggled ? '' : 'invisible'}`}>
+        <div 
+          className={`navbar-toggle ${isToggled ? '' : 'invisible'}`}
+        >
             <ul>
               
               <Link 
                 to='/'
                 className='navbar-link'
               >
-                <li>
+                <li onClick={handleClick}>
                   Inicio
                 </li>
               </Link>
@@ -45,7 +54,7 @@ const NavBar = () => {
                 to='/home'
                 className='navbar-link'
               >
-                <li>
+                <li onClick={handleClick}>
                   Libreria de juegos
                 </li>
               </Link>
@@ -54,7 +63,7 @@ const NavBar = () => {
                 to='/game'
                 className='navbar-link'
               >
-                <li>
+                <li onClick={handleClick}>
                   Crear videojuego
                 </li>
               </Link>
@@ -63,7 +72,7 @@ const NavBar = () => {
                 to='/contact'
                 className='navbar-link'
               >
-                <li>
+                <li onClick={handleClick}>
                   Contacto
                 </li>
               </Link>

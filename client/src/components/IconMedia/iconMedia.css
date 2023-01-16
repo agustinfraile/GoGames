@@ -1,0 +1,13 @@
+.social-list--icon {
+    /* background-color: blue; */
+    width: 7em;
+    height: 7em;
+    margin: 1em;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 4px solid #F2F2F2;
+}
+
+.social-list--icon img {
+    width: 100%;
+}

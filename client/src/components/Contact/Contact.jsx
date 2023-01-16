@@ -1,4 +1,9 @@
 import React from 'react';
+import profile from '../../images/profile.png';
+import IconMedia from '../IconMedia/IconMedia';
+
+import github from '../../images/github-logo.png';
+import linkedin from '../../images/linkedin-logo..png';
 
 import './contact.css';
 
@@ -8,26 +13,28 @@ const Contact = () => {
         <div className='contact-container_info'>
             <div className='contact-container_info--picture'>
                 {/* AQUI VA LA FOTO */}
+                <img src={ profile } alt="Imagen de perfil" />
             </div>
 
             <div className='contact-container_info--description'>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati error quaerat tempore, non in dolorum adipisci quo! Tempora repellendus ex earum culpa beatae explicabo, maxime saepe nihil, enim aspernatur quas?
-                    Tenetur aspernatur maiores mollitia, impedit placeat exercitationem quidem culpa nulla, libero id, quis ea. Cum consequuntur rem sequi, magni excepturi pariatur earum repellendus fuga dignissimos minus est repudiandae! Suscipit, optio.
+                    Hola, mi nombre es Agustin Fraile y soy desarrollador web. Tengo experiencia en maquetado con HTML y CSS para el front-end, y me especializo en el desarrollo de aplicaciones con React. En el back-end, trabajo principalmente con Node.js y Express, y tengo experiencia en trabajar con bases de datos MongoDB y PostgreSQL.
+                </p>
+                <p>
+                    Me gusta trabajar en proyectos desafiantes y me aseguro de cumplir con los estándares de calidad y las necesidades. Estoy emocionado de poder aplicar mis habilidades y conocimientos para ayudar todos en sus proyectos web.
                 </p>
             </div>
 
             <div className='contact-container_info--social'>
                 <div className='social-list'>
-                    <div className='social-list--icon'>
-                        {/* AQUI VA LA IMG DE LA RED SOCIAL */}
-                    </div>
-                    <div className='social-list--icon'>
-                        {/* AQUI VA LA IMG DE LA RED SOCIAL */}
-                    </div>
-                    <div className='social-list--icon'>
-                        {/* AQUI VA LA IMG DE LA RED SOCIAL */}
-                    </div>
+                    <IconMedia 
+                        logo={github}
+                        link={'https://github.com/agustinfraile'} 
+                        />
+                    <IconMedia 
+                        logo={linkedin}
+                        link={'https://www.linkedin.com/in/agustinfraile/'} 
+                    />
                 </div>
             </div>
         </div>
