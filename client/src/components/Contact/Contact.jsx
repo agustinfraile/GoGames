@@ -21,7 +21,7 @@ const Contact = () => {
                     Hola, mi nombre es Agustin Fraile y soy desarrollador web. Tengo experiencia en maquetado con HTML y CSS para el front-end, y me especializo en el desarrollo de aplicaciones con React. En el back-end, trabajo principalmente con Node.js y Express, y tengo experiencia en trabajar con bases de datos MongoDB y PostgreSQL.
                 </p>
                 <p>
-                    Me gusta trabajar en proyectos desafiantes y me aseguro de cumplir con los estándares de calidad y las necesidades. Estoy emocionado de poder aplicar mis habilidades y conocimientos para ayudar todos en sus proyectos web.
+                    Me gusta trabajar en proyectos desafiantes y me aseguro de cumplir con los estándares de calidad y las necesidades que se requieren. Me emociona el poder aplicar mis habilidades y conocimientos para ayudar a las personas en sus proyectos.
                 </p>
             </div>
 

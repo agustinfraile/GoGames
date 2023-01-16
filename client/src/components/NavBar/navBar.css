@@ -127,24 +127,37 @@
         width: 95%;
         display: flex;
         flex-direction: row;
+        justify-content: end;
     }
     
     .navbar-link {
+        /* background-color: aqua; */
         display: inline-block;
-        width: 100%;
-        height: 5em;
         margin-top: 0;
+        width: 10em;
+        height: 3.8em;
+        margin: .5em .3em;
     }
     
     
     .navbar-link li {
         background-color: #70707069;
         /* background-color: #5ba291; */
+        width: 10em;
         height: 3.8em;
         padding: 1.2em 0;
-        font-size: 1.3em;
+        font-size: 1em;
         color: #F2F2F2;
         margin: 0 .2em;
+        transition: .4s;
+
+    }
+
+    .navbar-link li:hover {
+        background-color: #707070aa;
+        transform: scale(105%);
+        /* font-weight: bold; */
+        transition: .4s;
     }
     
     
