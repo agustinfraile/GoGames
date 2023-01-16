@@ -55,7 +55,7 @@ const NavBar = () => {
                 className='navbar-link'
               >
                 <li onClick={handleClick}>
-                  Libreria de juegos
+                  Libreria
                 </li>
               </Link>
 
