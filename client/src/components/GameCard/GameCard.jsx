@@ -1,4 +1,5 @@
 import React from 'react';
+
 import "./gameCard.css";
 
 const GameCard = ({ name, image, genres, rating, id, createInDb }) => {

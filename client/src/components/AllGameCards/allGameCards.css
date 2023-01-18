@@ -21,3 +21,17 @@
     text-decoration: none;
     color: #39284d;
 }
+
+/* 800px para adelante */
+@media (min-width: 800px) {
+
+    .allGames-cnt {
+        width: 100%;
+        /* background-color: rgba(0, 0, 0, 0.427); */
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2em;
+        
+        /* column-gap: 15em; */   
+    }
+}
