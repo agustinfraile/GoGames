@@ -87,15 +87,13 @@ const Home = () => {
     return (
         <div className='home-container'>
 
-            {/* <NavBar /> */}
-            
-            {/* <Filters 
+            <Filters 
                 handleOrder={handleOrder} 
                 handleFilteredCreates = {handleFilteredCreates}
                 handleFilteredGenres = {handleFilteredGenres}
                 allGenres = {allGenres}
                 reset = {reset}
-            /> */}
+            />
 
             {/* <h4>Pagina: {currentPage}</h4>   */}
 
@@ -112,6 +110,7 @@ const Home = () => {
                     selectedPage = {selectedPage}
                 />
             </div>
+            
         </div>
     )
 }

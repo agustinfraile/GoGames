@@ -7,21 +7,23 @@ import CreateGame from './components/CreateGame/CreateGame';
 import PageNotFound  from './components/PageNotFound/PageNotFound';
 import NavBar from './components/NavBar/NavBar';
 import Contact from './components/Contact/Contact';
+import SearchBar from './components/SearchBar/SearchBar';
 
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-      <NavBar />
-      <Switch>
-        <Route exact path='/' component={Landing} />
-        <Route exact path='/home' component={Home} />
-        <Route exact path='/game' component={CreateGame} />
-        <Route exact path='/game/:id' component={GameDetail} />
-        <Route exact path='/contact' component={Contact} />
-        <Route path= '/*' component={PageNotFound} />
-      </Switch>
+        <NavBar />
+        <SearchBar />
+        <Switch>
+          <Route exact path='/' component={Landing} />
+          <Route exact path='/home' component={Home} />
+          <Route exact path='/game' component={CreateGame} />
+          <Route exact path='/game/:id' component={GameDetail} />
+          <Route exact path='/contact' component={Contact} />
+          <Route path= '/*' component={PageNotFound} />
+        </Switch>
       </BrowserRouter>
     </div>
   );

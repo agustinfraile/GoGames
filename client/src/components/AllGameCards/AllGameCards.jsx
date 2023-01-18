@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Error from '../Error/Error';
 import GameCard from '../GameCard/GameCard';
+import SearchBar from '../SearchBar/SearchBar';
 import "./allGameCards.css"
 
 

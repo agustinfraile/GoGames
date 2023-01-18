@@ -9,7 +9,7 @@ const Landing = () => {
     <div className="landing-cnt">
 
       <div className="landing-tit_cnt">
-        <h1>Games web</h1>
+        <h1>Go Games</h1>
       </div>
 
       <div className="landing-cnt_images">

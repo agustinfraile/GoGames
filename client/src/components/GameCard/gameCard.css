@@ -1,5 +1,6 @@
 .card-cnt {
-    background-color: #35353521;
+    /* background-color: #35353521; */
+    /* background-color: #f2f2f297; */
     width: 100%;
     height: 14em; 
     display: flex;
@@ -23,13 +24,22 @@
     width: 50%;
     height: 14em;
     margin: auto 0;
-    padding: 2.5em 0;
+    padding: 2em;
+    
+}
+
+.card-img img {
+    width: 90%;
+    height: 8em;
 }
 
 .card-info {
+    width: 70%;
+    height: 14em;
     /* background-color: bisque; */
     color: #F2F2F2;
-    width: 50%;
+    /* width: 50%; */
+    /* z-index: 1; */
 }
 
 .card-name {
@@ -37,12 +47,10 @@
     text-decoration: none;
     font-size: 1em;
     height: 50%;
-    
+    /* padding: .5em */
 }
 
-.card-img img {
-    width: 95%;
-}
+
 
 .card-genres {
     /* background-color: rgb(75, 131, 112); */
