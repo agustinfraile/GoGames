@@ -36,6 +36,15 @@ const GameDetail = () => {
         return filter
     }
 
+    function convertDateFormat(string) {
+        let info = string.split('-').reverse().join('/');
+        return info;
+   }
+
+   function removeTagHTML (html){
+    return html.replace(/<[^>]*>/g, '');
+   }
+
     {   
         return (
             filterId() ?
@@ -72,9 +81,7 @@ const GameDetail = () => {
                         <div className='detail-cnt-description'>
                             <h2>Descripcion:</h2>
                             <p>
-                                {
-                                    detailGame.description
-                                }
+                                { removeTagHTML(detailGame.description) }
                             </p>
                         </div>
 
@@ -87,7 +94,7 @@ const GameDetail = () => {
                                         Fecha de lanzamiento: 
                                     </h3>
                                     <span>
-                                        {detailGame.released}
+                                        {convertDateFormat(detailGame.released)}
                                     </span>
                                     
                                 </div>

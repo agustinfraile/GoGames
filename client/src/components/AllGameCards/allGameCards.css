@@ -22,14 +22,28 @@
     color: #39284d;
 }
 
-/* 800px para adelante */
-@media (min-width: 800px) {
+/* 500px para adelante */
+@media (min-width: 500px) {
 
     .allGames-cnt {
         width: 100%;
-        /* background-color: rgba(0, 0, 0, 0.427); */
+        /* background-color: rgba(121, 61, 61, 0.685); */
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+        gap: 2em;
+        
+        /* column-gap: 15em; */   
+    }
+}
+
+/* 500px para adelante */
+@media (min-width: 1024px) {
+
+    .allGames-cnt {
+        width: 100%;
+        /* background-color: rgba(121, 61, 61, 0.685); */
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
         gap: 2em;
         
         /* column-gap: 15em; */   
