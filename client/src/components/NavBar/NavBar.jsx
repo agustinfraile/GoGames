@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import SearchBar from '../SearchBar/SearchBar';
 import logo from "../../images/logo.png"
 import close from "../../images/x.png"
 import menu from "../../images/menu.png"
-
 import "./navBar.css";
 
-const NavBarComponent = () => {
+const NavBar = () => {
 
   const [isToggled, setIsToggled] = useState(false);
 
@@ -37,13 +37,13 @@ const NavBarComponent = () => {
         </div>
 
         <div 
-          className={`navbar-toggles ${isToggled ? '' : 'invisible'}`}
+          className={`navbar-toggle ${isToggled ? 'invisible' : ''}`}
         >
             <ul>
               
               <Link 
                 to='/'
-                className='navbar-links'
+                className='navbar-link'
               >
                 <li onClick={handleClick}>
                   Inicio
@@ -52,7 +52,7 @@ const NavBarComponent = () => {
 
               <Link 
                 to='/home'
-                className='navbar-links'
+                className='navbar-link'
               >
                 <li onClick={handleClick}>
                   Libreria
@@ -61,7 +61,7 @@ const NavBarComponent = () => {
 
               <Link 
                 to='/game'
-                className='navbar-links'
+                className='navbar-link'
               >
                 <li onClick={handleClick}>
                   Crear videojuego
@@ -70,7 +70,7 @@ const NavBarComponent = () => {
 
               <Link 
                 to='/contact'
-                className='navbar-links'
+                className='navbar-link'
               >
                 <li onClick={handleClick}>
                   Contacto
@@ -87,4 +87,4 @@ const NavBarComponent = () => {
   )
 }
 
-export default NavBarComponent;
+export default NavBar
