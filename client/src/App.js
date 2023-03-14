@@ -5,17 +5,16 @@ import Home from './components/Home/Home';
 import GameDetail from './components/GameDetail/GameDetail';
 import CreateGame from './components/CreateGame/CreateGame';
 import PageNotFound  from './components/PageNotFound/PageNotFound';
-import NavBar from './components/NavBar/NavBar';
 import Contact from './components/Contact/Contact';
-import SearchBar from './components/SearchBar/SearchBar';
+
+import NavBarComponent from './components/NavBar/NavBar';
 
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <NavBar />
-        <SearchBar />
+        <NavBarComponent />
         <Switch>
           <Route exact path='/' component={Landing} />
           <Route exact path='/home' component={Home} />

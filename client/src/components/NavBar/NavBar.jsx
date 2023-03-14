@@ -37,7 +37,7 @@ const NavBar = () => {
         </div>
 
         <div 
-          className={`navbar-toggle ${isToggled ? '' : 'invisible'}`}
+          className={`navbar-toggle ${isToggled ? 'invisible' : ''}`}
         >
             <ul>
               

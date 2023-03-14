@@ -48,6 +48,16 @@
 
 /* 800px para adelante */
 @media (min-width: 800px) {
+
+    .landing-cnt {
+        width: 100%;
+        min-height: 100vh;
+        height: auto;
+        background-color: #363636;
+        padding: 1em 0;
+    }
+
+    
     .landing-cnt_button {
         /* background-color: #4550c7; */
         width: 90%;
@@ -58,5 +68,13 @@
         flex-direction: row;
         justify-content: center;
         
+    }
+
+    .landing-cnt_images {
+        background-color: rgb(73, 73, 73);
+        width: 80%;
+        height: 30em;
+        margin: 1em auto;
+        border-radius: 21px;
     }
 }
