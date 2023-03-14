@@ -6,7 +6,6 @@ import AllGameCards from '../AllGameCards/AllGameCards';
 import Filters from '../Filters/Filters';
 import Loading from '../Loading/Loading';
 
-import NavBar from '../NavBar/NavBar';
 import Paginate from '../Paginate/Paginate';
 
 import "./home.css";
@@ -29,7 +28,7 @@ const Home = () => {
 
     const currentGame = allGames.slice(indexOfFirstGame, indexOfLastGame); 
 
-    const [loader, setLoader] = useState(true);
+    const [isLoading, setIsLoading] = useState(true);
 
     const [selectedPage, setSelectedPage] = useState(1);
 
@@ -41,16 +40,12 @@ const Home = () => {
 
     useEffect(() => {
         dispatch(getGameGenre());
-
     }, [dispatch]);
 
     useEffect(() => {
-        if(!allGames.length) {
-            dispatch(getGames()).then(() => setLoader(false));
-        }
+        dispatch(getGames());
+        setIsLoading(false);
     }, [dispatch]);
-
-
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -87,6 +82,8 @@ const Home = () => {
     return (
         <div className='home-container'>
 
+            {isLoading ? <Loading /> : null}
+
             <Filters 
                 handleOrder={handleOrder} 
                 handleFilteredCreates = {handleFilteredCreates}
@@ -95,11 +92,10 @@ const Home = () => {
                 reset = {reset}
             />
 
-            {/* <h4>Pagina: {currentPage}</h4>   */}
-
             <AllGameCards 
                 currentGame = {currentGame}
                 allGames = {allGames}
+                isLoading={isLoading}
             /> 
             
             <div className='home-container_paginate'>

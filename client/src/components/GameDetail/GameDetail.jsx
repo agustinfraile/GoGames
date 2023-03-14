@@ -19,7 +19,7 @@ const GameDetail = () => {
 
     useEffect(() => {
         dispatch(getGameDetails(id)).then(() => setLoader(false));
-    }, [dispatch, id])
+    }, [dispatch, id]);
 
 
     if(loader) {
