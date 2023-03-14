@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import SearchBar from '../SearchBar/SearchBar';
 import logo from "../../images/logo.png"
 import close from "../../images/x.png"
 import menu from "../../images/menu.png"

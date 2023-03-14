@@ -15,7 +15,6 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <NavBar />
-        <SearchBar />
         <Switch>
           <Route exact path='/' component={Landing} />
           <Route exact path='/home' component={Home} />

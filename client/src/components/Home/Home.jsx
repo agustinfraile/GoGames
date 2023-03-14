@@ -7,6 +7,7 @@ import Filters from '../Filters/Filters';
 import Loading from '../Loading/Loading';
 
 import Paginate from '../Paginate/Paginate';
+import SearchBar from '../SearchBar/SearchBar';
 
 import "./home.css";
 
@@ -81,6 +82,7 @@ const Home = () => {
 
     return (
         <div className='home-container'>
+            <SearchBar />
 
             {isLoading ? <Loading /> : null}
 

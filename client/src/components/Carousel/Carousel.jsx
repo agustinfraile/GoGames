@@ -8,7 +8,7 @@ const CarouselComponent = () => {
   return (
     <>
         <Carousel>
-            <Carousel.Item interval={1000}>
+            <Carousel.Item interval={2000} className='img-container'>
                 <img
                     className="d-block w-100"
                     src="https://res.cloudinary.com/dmz6gyyoo/image/upload/v1678802845/i3vkiwxk98xtkeruvb8g.jpg"
@@ -20,7 +20,7 @@ const CarouselComponent = () => {
                 </Carousel.Caption> */}
             </Carousel.Item>
 
-            <Carousel.Item interval={500}>
+            <Carousel.Item interval={2000} className='img-container'>
                 <img
                     className="d-block w-100"
                     src="https://res.cloudinary.com/dmz6gyyoo/image/upload/v1678802887/uxdmdqzhwp66wlmvud8j.jpg"
@@ -31,7 +31,7 @@ const CarouselComponent = () => {
                 </Carousel.Caption> */}
             </Carousel.Item>
 
-            <Carousel.Item>
+            <Carousel.Item interval={2000} className='img-container'>
                 <img
                     className="d-block w-100"
                     src="https://res.cloudinary.com/dmz6gyyoo/image/upload/v1678802955/pqwegn7inj7gnypxgbfv.jpg"
