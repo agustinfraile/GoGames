@@ -2,6 +2,8 @@ import "./landing.css";
 import React from "react";
 import { Link } from "react-router-dom";
 import Button from "../Button/Button";
+import CarouselComponent from "../Carousel/Carousel";
+
 
 
 const Landing = () => {
@@ -13,7 +15,7 @@ const Landing = () => {
       </div>
 
       <div className="landing-cnt_images">
-
+        <CarouselComponent />
       </div>
 
       <div className="landing-cnt_button">
