@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom';
 import logo from "../../images/logo.png"
 import close from "../../images/x.png"
 import menu from "../../images/menu.png"
+
 import "./navBar.css";
 
-const NavBar = () => {
+const NavBarComponent = () => {
 
   const [isToggled, setIsToggled] = useState(false);
 
@@ -36,13 +37,13 @@ const NavBar = () => {
         </div>
 
         <div 
-          className={`navbar-toggle ${isToggled ? '' : 'invisible'}`}
+          className={`navbar-toggles ${isToggled ? '' : 'invisible'}`}
         >
             <ul>
               
               <Link 
                 to='/'
-                className='navbar-link'
+                className='navbar-links'
               >
                 <li onClick={handleClick}>
                   Inicio
@@ -51,7 +52,7 @@ const NavBar = () => {
 
               <Link 
                 to='/home'
-                className='navbar-link'
+                className='navbar-links'
               >
                 <li onClick={handleClick}>
                   Libreria
@@ -60,7 +61,7 @@ const NavBar = () => {
 
               <Link 
                 to='/game'
-                className='navbar-link'
+                className='navbar-links'
               >
                 <li onClick={handleClick}>
                   Crear videojuego
@@ -69,7 +70,7 @@ const NavBar = () => {
 
               <Link 
                 to='/contact'
-                className='navbar-link'
+                className='navbar-links'
               >
                 <li onClick={handleClick}>
                   Contacto
@@ -86,4 +87,4 @@ const NavBar = () => {
   )
 }
 
-export default NavBar
+export default NavBarComponent;
