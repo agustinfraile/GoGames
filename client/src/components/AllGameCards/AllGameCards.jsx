@@ -1,24 +1,24 @@
 import React from 'react';
-import { useEffect } from 'react';
-import { useState } from 'react';
-import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { getGames } from '../../redux/actions';
 import Error from '../Error/Error';
 import GameCard from '../GameCard/GameCard';
 import Loading from '../Loading/Loading';
+import SearchBar from '../SearchBar/SearchBar';
+
+
 import "./allGameCards.css"
 
 
 
-const AllGameCards = ({currentGame, allGames}) => {
+const AllGameCards = ({currentGame, allGames, isLoading}) => {
     
 
   return (
     <div className='allGames'>
+        {isLoading ? <Loading /> : null}
         <div className='allGames-cnt'>
             {
-                currentGame.length > 0 ?
+                currentGame.length > 0 ? (
                     currentGame?.map( game => {
                         return (
                             <Link 
@@ -38,7 +38,10 @@ const AllGameCards = ({currentGame, allGames}) => {
                             </Link>
                         )
                     })
-                : <Error />
+                ) : (
+                    <p>No hay juegos disponibles</p>
+                )
+
             }   
         </div>
     </div>

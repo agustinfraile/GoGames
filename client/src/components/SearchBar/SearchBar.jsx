@@ -22,19 +22,21 @@ const SearchBar = () => {
     }
 
     return (
-        <form className='form-search-cnt'>
-            <input 
-                type="text" 
-                placeholder='Buscar videojuego...'
-                onChange={e => handleInputChange(e)}
-            />
-            <button 
-                type='submit'
-                onClick={e => handleButtonSubmit(e)}
-            >
-                <img src={searchLogo} alt="search icon" />
-            </button>
-        </form>
+        <div className='search-cnt'>
+            <form className='form-search-cnt'>
+                <input 
+                    type="text" 
+                    placeholder='Buscar videojuego...'
+                    onChange={e => handleInputChange(e)}
+                />
+                <button 
+                    type='submit'
+                    onClick={e => handleButtonSubmit(e)}
+                >
+                    <img src={searchLogo} alt="search icon" />
+                </button>
+            </form>
+        </div>
     )
 }
 

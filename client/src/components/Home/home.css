@@ -1,0 +1,26 @@
+.home-container {
+    background-color: #363636;
+    width: 100%;
+    height: auto;
+}
+
+.home-container_paginate {
+    /* background-color: rebeccapurple; */
+    width: 100%;
+    height: auto;
+}
+
+/* 800px para adelante */
+@media (min-width: 800px) {
+    .home-container {
+        background-color: #363636;
+        width: 100%;
+        height: auto;
+    }
+    
+    .home-container_paginate {
+        /* background-color: rebeccapurple; */
+        width: 100%;
+        height: auto;
+    }
+}

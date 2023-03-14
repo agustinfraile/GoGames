@@ -1,0 +1,18 @@
+.btn_container {
+    width: 10em;
+    height: 3.4em;
+    margin: .3em auto;
+    border-radius: 21px;
+    border: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    /* background-color: #c6c6c6; */
+}
+
+@media (min-width: 800px) {
+    .btn_container {
+        margin: .5em;
+        font-size: 1.4em;
+    }   
+}

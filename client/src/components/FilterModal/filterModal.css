@@ -1,0 +1,116 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* height: 100vh; */
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none; /* el modal está oculto por defecto */
+}
+  
+.modal.is-open {
+    display: flex; /* el modal se muestra cuando se agrega la clase "is-open" */
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    width: 90%;
+    height: 100vh;
+    margin: .5em auto;
+    background-color: rgba(255, 255, 255, 0.559);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.modal-close-button {
+    width: 30px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #F2F2F2;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    color: rgb(125, 40, 40);
+}
+
+
+
+
+
+
+.filter-cnt-toggle {
+    background-color: #39284d;
+    width: 80%;
+    height: 100vh;
+}
+
+.select-order {
+    background-color: orange;
+    width: 20%;
+    height: 5em;
+    padding: .5em 0;
+}
+
+.select-order--group {
+    background-color: rgba(0, 0, 0, 0);
+    border: 0;
+    outline: none;
+    height: 4em;
+    width: 10em;
+    font-size: 1em;
+    color: rgb(255, 255, 255);
+} 
+
+.select-order--group option {
+    background-color: #39284d;
+    color: #fff;
+}
+
+
+
+.select-filter-create {
+    background-color: bisque;
+    width: 20%;
+    height: 5em;
+    padding: .5em 0;
+}
+
+.select-filter-genres {
+    background-color: blueviolet;
+    width: 20%;
+    height: 5em;
+    padding: .5em 0;
+}
+
+.navbar-cnt_create {
+    background-color: brown;
+    width: 30%;
+    height: 5em;
+    padding: .5em 0;
+}
+
+.navbar-cnt_clear {
+    background-color: yellow;
+    width: 30%;
+    height: 5em;
+    padding: .5em 0;
+}
+
+.navbar-cnt--button {
+    border: none;
+    width: 12em;
+    height: 4.5em;
+    border-radius: 20px;
+    font-size: .9em;
+    font-weight: bold;
+    background-color: #ff3491;
+    cursor: pointer;
+}
+
+.navbar-cnt_clear .navbar-cnt--button {
+    background-color: rgba(255, 255, 255, 0.557);
+    color: #000;
+}
+  

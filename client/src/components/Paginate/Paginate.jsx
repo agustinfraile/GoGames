@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "./paginate.css"
 
-const Paginate = ({gamesPage, allGames, paginate}) => {
+const Paginate = ({ gamesPage, allGames, paginate, selectedPage }) => {
 
     const pageNumbers = []; 
 
@@ -18,8 +18,12 @@ const Paginate = ({gamesPage, allGames, paginate}) => {
                     {
                         pageNumbers?.map( num => {
                             return(
-                                <li className="nav-paginate-cnt" key={num}>
-                                    <button href='#top' className="nav-paginate-cnt--list" onClick={()=> paginate(num)}>
+                                <li className="nav-paginate-cnt" key={num} >
+                                    <button 
+                                        href='#top' 
+                                        className={`nav-paginate-cnt--list ${selectedPage === num ? 'selected' : ''}`}
+                                        onClick={() => paginate(num)}
+                                    >
                                         {num}
                                     </button>
                                 </li>

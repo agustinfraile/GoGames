@@ -1,27 +1,42 @@
 .createGame-cnt {
+    background-color: #363636;
     width: 100%;
     min-height: 100vh;
     height: 100%;
-    /* background-color: aqua; */
-    padding-top: 5vh;
-    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(57,40,77,1) 0%, rgba(255,52,145,1) 0%, rgba(167,199,255,1) 83%, rgba(255,255,255,1) 100%);
+    color: #F2F2F2;
+    padding-top: 4vh;
+    padding-bottom: 4vh;
+}
+
+.createGame-cnt-title {
+    /* background-color: #a945c71c; */
+    width: 90%;
+    height: auto;
+    margin: .6em auto;
+    padding: .5em 0;
+}
+
+.createGame-cnt-title h1 {
+    font-size: 2em;
 }
 
 .createGame-cnt form {
-    width: 30%;
+    /* background-color: rgba(255, 255, 255, 0.049); */
+    box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.108);
+    width: 90%;
     height: auto;
     margin: 0 auto;
-    background-color: rgba(255, 255, 255, 0.204);
-    box-shadow: 4px 4px 6px 1px rgba(0, 0, 0, 0.325);
+    color: #FFE600;
+    font-weight: bolder;
 }
 
 .form-name {
-    /* background-color: red; */
+    /* background-color: rgba(255, 0, 0, 0.276); */
     height: auto;
     width: 100%;
     display: flex;
     flex-direction: column;
-    padding: .5em;
+    padding: .8em .4em;
 }
 
 .form-name label {
@@ -30,27 +45,30 @@
 }
 
 .form-name input {
-    width: 30em;
-    margin: 0 auto;
+    width: 100%;
+    margin: .2em auto;
     height: 2.5em;
     border: none;
     outline: none;
+    border-radius: 16px;
     box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, 0.337);
+    padding: .5em;
 }
 
-.form-name  p {
+.form-name p {
     color: rgb(190, 0, 0);
     font-size: 1.2em;
     font-weight: bold;
 }
 
 .form-released {
-    /* background-color: rgb(0, 191, 255); */
+    /* background-color: rgba(60, 255, 0, 0.276); */
     height: auto;
     width: 100%;
+    margin: .6em 0;
     display: flex;
     flex-direction: column;
-    padding: .5em;
+    padding: .8em .4em;
 }
 
 .form-released label {
@@ -59,22 +77,24 @@
 }
 
 .form-released input {
-    width: 30em;
-    margin: 0 auto;
+    width: 100%;
+    margin: .2em auto;
     height: 2.5em;
     border: none;
     outline: none;
+    border-radius: 16px;
     box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, 0.337);
-
+    padding: .5em;
 }
 
 .form-rating {
-    /* background-color: rgb(0, 191, 255); */
+    /* background-color: rgba(255, 0, 238, 0.276); */
     height: auto;
     width: 100%;
+    margin: .6em 0;
     display: flex;
     flex-direction: column;
-    padding: .5em;
+    padding: .8em .4em;
 }
 
 .form-rating label {
@@ -83,20 +103,21 @@
 }
 
 .form-rating input {
-    width: 30em;
-    margin: 0 auto;
+    width: 100%;
+    margin: .2em auto;
     height: 2.5em;
     border: none;
     outline: none;
 }
 
 .form-description {
-    /* background-color: rgb(0, 191, 255); */
+    /* background-color: rgba(0, 229, 255, 0.276); */
     height: auto;
     width: 100%;
+    margin: .6em 0;
     display: flex;
     flex-direction: column;
-    padding: .5em;
+    padding: .8em .4em;
 }
 
 .form-description label {
@@ -105,12 +126,14 @@
 }
 
 .form-description textarea {
-    width: 30em;
-    margin: 0 auto;
+    width: 100%;
+    margin: .2em auto;
     height: 6em;
     border: none;
     outline: none;
+    border-radius: 16px;
     box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, 0.337);
+    padding: .5em;
 }
 
 .form-description  p {
@@ -120,12 +143,13 @@
 }
 
 .form-genres {
-    /* background-color: rgb(0, 191, 255); */
+    /* background-color: rgba(255, 183, 0, 0.276); */
     height: auto;
     width: 100%;
+    margin: .6em 0;
     display: flex;
     flex-direction: column;
-    padding: .5em;
+    padding: .8em .4em;
 }
 
 .form-genres label {
@@ -134,22 +158,25 @@
 }
 
 .form-genres select {
-    width: 30em;
-    margin: 0 auto;
+    width: 100%;
+    margin: .2em auto;
     height: 2.5em;
     border: none;
     outline: none;
+    border-radius: 16px;
     box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, 0.337);
+    padding: .5em;
 }
 
 
 .form-platforms {
-    /* background-color: rgb(0, 191, 255); */
+    /* background-color: rgba(0, 255, 8, 0.276); */
     height: auto;
     width: 100%;
+    margin: .6em 0;
     display: flex;
     flex-direction: column;
-    padding: .5em;
+    padding: .8em .4em;
 }
 
 .form-platforms label {
@@ -158,21 +185,24 @@
 }
 
 .form-platforms select {
-    width: 30em;
-    margin: 0 auto;
+    width: 100%;
+    margin: .2em auto;
     height: 2.5em;
     border: none;
     outline: none;
+    border-radius: 16px;
     box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, 0.337);
+    padding: .5em;
 }
 
 .form-image {
-    /* background-color: rgb(0, 191, 255); */
+    /* background-color: rgba(0, 30, 255, 0.276); */
     height: auto;
     width: 100%;
+    margin: .6em 0;
     display: flex;
     flex-direction: column;
-    padding: .5em;
+    padding: .8em .4em;
 }
 
 .form-image label {
@@ -181,22 +211,88 @@
 }
 
 .form-image input {
-    width: 30em;
-    margin: 0 auto;
+    width: 100%;
+    margin: .2em auto;
     height: 2.5em;
     border: none;
     outline: none;
+    border-radius: 16px;
     box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, 0.337);
+    padding: .5em;
 }
 
-.createGame-cnt .btn-create{
+.select-opt {
+    /* background-color: #FFE600; */
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
 
-    padding: .8em .5em;
-    color: #fff;
-    letter-spacing: 2px;
-    font-size: 1.2em;
-    text-decoration: none;
-    overflow: hidden;
-    background-color: #a945c71c;
+.genres-opts {
+    /* background-color: red; */
+    background-color: #0058DD;
+    width: 48%;
+    height: auto;
+    margin: .5em 0;
+    box-shadow: 1px 2px 5px .5px #9b95684f;
+    color: #F2F2F2;
+    padding: 0;
+    display: flex;
+}
+
+
+
+
+.genres-opts button {
+    /* background-color: #F2F2F2; */
+    width: 25%;
+    min-height: 3em;
+    border: none;
     cursor: pointer;
+    font-weight: bold;
+}
+
+.genres-opts span {
+    /* background-color: #26a495; */
+    width:75%;
+    min-height: 2.5em;
+    padding: .5em;
+}
+
+.form-buttons {
+    height: auto;
+    width: 100%;
+    margin: .6em 0;
+    display: flex;
+    flex-direction: column;
+    padding: .8em .4em;
+}
+
+/* 800px para adelante */
+@media (min-width: 800px) {
+    .form-buttons {
+        /* background-color: aquamarine; */
+        height: auto;
+        width: 100%;
+        margin: .6em 0;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        padding: 1em .4em;
+    }
+}
+
+/* 1024px para adelante */
+@media (min-width: 1024px) {
+    .createGame-cnt form {
+        background-color: #1c66d453;
+        box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.108);
+        width: 60%;
+        height: auto;
+        margin: 1em auto;
+        padding: 1em;
+        border-radius: 21px;
+        color: #FFE600;
+        font-weight: bolder;
+    }
 }
