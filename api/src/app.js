@@ -3,7 +3,7 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const routes = require('./routes/index.js');
-const cors = require("cors");
+const cors =require("cors");
 
 
 require('./db.js');
@@ -12,9 +12,6 @@ const server = express();
 
 server.name = 'API';
 
-var corsOptions= {
-  origin: ["http://localhost:3000", 'https://gogamesapp.netlify.app/'],
-}
 
 server.use(bodyParser.urlencoded({ extended: true, limit: '50mb' }));
 server.use(bodyParser.json({ limit: '50mb' }));
@@ -28,6 +25,7 @@ server.use((req, res, next) => {
   res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
   next();
 });
+
 
 server.use('/', routes);
 
