@@ -13,7 +13,7 @@ const server = express();
 server.name = 'API';
 
 var corsOptions= {
-  origin: ["http://localhost:3000", 'https://gogamesapp.netlify.app/'],
+  origin: ["http://localhost:3000", 'https://gogamesapp.netlify.app/', 'https://gogames-app.up.railway.app/'],
 }
 
 server.use(bodyParser.urlencoded({ extended: true, limit: '50mb' }));
