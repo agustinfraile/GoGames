@@ -6,7 +6,7 @@ Este proyecto tiene como objetivo proporcionar a los usuarios una plataforma en 
 
 La aplicación utiliza React como framework de frontend, lo que permite una interfaz de usuario dinámica y moderna. También se utiliza una base de datos PostgreSQL para almacenar y gestionar los datos de los juegos, y un servidor Express para conectar el frontend con la base de datos.
 
-[Link del proyecto](https://webdogsapp.netlify.app/)
+[Link del proyecto](https://gogamesapp.netlify.app/)
 
 ## Funcionalidades
 - Crear un nuevo juego
