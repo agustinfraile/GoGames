@@ -25,7 +25,7 @@ const { allGenres } = require('./src/controllers/index.js');
 // Syncing all the models at once.
 conn.sync({ force: false }).then(() => {
   server.listen(port, () => {
-    allGenres();
+    allGenres();  
     console.log(`listening in port ${port}`);
   });
 });
